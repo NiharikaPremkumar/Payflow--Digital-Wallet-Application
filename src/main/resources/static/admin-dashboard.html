@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - PayFlow</title>
+  <link rel="icon" href="/payflowlogo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-100 via-teal-100 to-blue-100 min-h-screen font-sans text-gray-800">
+<div id="notification"
+     class="fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 rounded-lg shadow-lg text-white font-semibold max-w-xl w-[90vw] hidden z-50">
+  <!-- Notification message goes here -->
+</div>
+
+<div class="max-w-6xl mx-auto py-12 px-6">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-10">
+    <div class="flex items-center space-x-4">
+      <img src="/payflow.png" alt="PayFlow Logo" class="h-12 w-auto" />
+      <h1 class="text-5xl font-extrabold text-teal-800 tracking-tight">Admin Dashboard</h1>
+    </div>
+    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-xl shadow-md transition">Logout</button>
+  </div>
+
+  <!-- Card Grid -->
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Freeze/Unfreeze Accounts Card -->
+    <div class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/30 flex flex-col">
+      <h2 class="text-2xl font-semibold text-teal-700 mb-4">Freeze / Unfreeze Accounts</h2>
+      <p class="text-gray-700 mb-6">Control user activity for suspicious accounts.</p>
+      <label for="freezeUsername" class="mb-2 text-teal-800 font-medium">Username</label>
+      <input type="text" id="freezeUsername" placeholder="Enter username" class="mb-6 px-4 py-3 rounded-lg border border-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transition" />
+      <div class="flex gap-6 justify-start">
+        <button onclick="freezeAccount()" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-xl transition">Freeze</button>
+        <button onclick="unfreezeAccount()" class="flex-1 bg-teal-400 hover:bg-teal-500 text-white font-semibold py-3 rounded-xl transition">Unfreeze</button>
+      </div>
+    </div>
+
+    <!-- Audit Transactions Card -->
+    <div class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/30 flex flex-col">
+      <h2 class="text-2xl font-semibold text-teal-700 mb-4">Audit Transactions</h2>
+      <p class="text-gray-700 mb-6">View all user transactions for review and analysis.</p>
+      <button onclick="auditTransactions()" class="bg-teal-600 hover:bg-teal-700 text-white px-5 py-3 rounded-xl font-semibold transition w-fit">View</button>
+      <div id="transactionList" class="mt-6 max-h-64 overflow-y-auto text-sm text-gray-800 space-y-1 pr-1"></div>
+    </div>
+
+    <!-- System Logs Card -->
+    <div class="bg-white/60 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/30 flex flex-col">
+      <h2 class="text-2xl font-semibold text-teal-700 mb-4">System Logs</h2>
+      <p class="text-gray-700 mb-6">Check recent system activity and alerts.</p>
+      <button id="systemLogsBtn" onclick="fetchSystemLogs()" class="bg-teal-600 hover:bg-teal-700 text-white px-5 py-3 rounded-xl font-semibold transition w-fit">Access</button>
+      <div id="systemLogsOutput" class="mt-6 max-h-64 overflow-y-auto text-sm text-gray-800 space-y-1 pr-1"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const token = localStorage.getItem("token");
+
+  let notifTimeout;
+  function showNotification(message, type = "info") {
+    clearTimeout(notifTimeout);
+    const notif = document.getElementById("notification");
+    notif.textContent = message;
+    notif.className = "fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-4 rounded-lg shadow-lg text-white font-semibold max-w-xl w-[90vw] z-50";
+
+    if (type === "success") {
+      notif.classList.add("bg-green-500");
+    } else if (type === "error") {
+      notif.classList.add("bg-red-500");
+    } else {
+      notif.classList.add("bg-blue-500");
+    }
+
+    notif.style.display = "block";
+
+    notifTimeout = setTimeout(() => {
+      notif.style.display = "none";
+    }, 3500);
+  }
+
+  function checkToken() {
+    if (!token) {
+      showNotification("No admin token found. Please login.", "error");
+      setTimeout(() => window.location.href = "/admin-auth.html", 3600);
+      return false;
+    }
+    return true;
+  }
+
+  function logout() {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      showNotification("No token found. Please log in again.", "error");
+      return;
+    }
+
+    fetch('/api/admin/logout', {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+    .then(res => {
+      if (!res.ok) return res.text().then(text => { throw new Error(text || "Logout failed"); });
+      return res.text();
+    })
+    .then(() => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("username");
+      showNotification("Logged out Successfully", "success");
+      setTimeout(() => window.location.href = "/admin-auth.html", 1500);
+    })
+    .catch(err => {
+      console.error("Logout Error:", err.message || err);
+      showNotification("Error logging out: " + (err.message || err), "error");
+    });
+  }
+
+  function freezeAccount() {
+    if (!checkToken()) return;
+
+    const username = document.getElementById("freezeUsername").value.trim();
+    if (!username) return showNotification("Enter a username", "error");
+
+    fetch(`/api/admin/freeze-account/${username}`, {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+    .then(async res => {
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Freeze failed");
+      showNotification(data.message, "success");
+    })
+    .catch(err => showNotification(err.message, "error"));
+  }
+
+  function unfreezeAccount() {
+    if (!checkToken()) return;
+
+    const username = document.getElementById("freezeUsername").value.trim();
+    if (!username) return showNotification("Enter a username", "error");
+
+    fetch(`/api/admin/unfreeze-account/${username}`, {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${token}` }
+    })
+    .then(async res => {
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Unfreeze failed");
+      showNotification(data.message, "success");
+    })
+    .catch(err => showNotification(err.message, "error"));
+  }
+
+  function auditTransactions() {
+    if (!checkToken()) return;
+
+    fetch('/api/admin/audit-transactions', {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to fetch audit data");
+      return res.json();
+    })
+    .then(data => {
+      const container = document.getElementById("transactionList");
+      container.innerHTML = "";
+
+      if (!data.success || !data.data || data.data.length === 0) {
+        container.innerHTML = "<p class='text-sm text-gray-600'>No transactions found.</p>";
+        return;
+      }
+
+      data.data.forEach(tx => {
+        const item = document.createElement("div");
+        item.className = "px-2 py-1 rounded font-mono text-sm text-gray-800 bg-white/40 border border-white/30 mb-1";
+        const date = new Date(tx.transactionDate).toLocaleString();
+        item.innerHTML = `<span class="text-teal-700 font-semibold">${tx.senderUsername}</span> → <span class="text-teal-700 font-semibold">${tx.recipientUsername}</span>: ₹${tx.amount.toFixed(2)} <br/><small class="text-gray-600">${date}</small>`;
+        container.appendChild(item);
+      });
+    })
+    .catch(err => showNotification(err.message, "error"));
+  }
+
+  function fetchSystemLogs() {
+  if (!checkToken()) return;
+
+  fetch('/api/admin/system-logs', {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => {
+    if (!res.ok) throw new Error("Logs fetch failed");
+    return res.json();
+  })
+  .then(data => {
+    const container = document.getElementById("systemLogsOutput");
+    container.innerHTML = "";
+
+    if (!data.success || !data.data?.length) {
+      container.innerHTML = "<p class='text-sm text-gray-600'>No system logs found.</p>";
+      return;
+    }
+
+    data.data.forEach(log => {
+      const item = document.createElement("div");
+      item.className = "px-2 py-1 rounded font-mono text-sm text-gray-800 bg-white/40 border border-white/30 mb-1";
+      item.innerHTML = `<span class="text-gray-500">[${log.timestamp}]</span> <span class="text-teal-600">(${log.level})</span> ${log.message}`;
+      container.appendChild(item);
+    });
+  })
+  .catch(() => {
+    const container = document.getElementById("systemLogsOutput");
+    container.innerHTML = "<p class='text-sm text-red-600'>Failed to fetch system logs.</p>";
+  });
+}
+  // Run token check on load
+  window.onload = () => {
+    if (!token) {
+      showNotification("Please login to access admin dashboard.", "error");
+      setTimeout(() => window.location.href = "/admin-auth.html", 3000);
+    }
+  }
+</script>
+</body>
+</html>

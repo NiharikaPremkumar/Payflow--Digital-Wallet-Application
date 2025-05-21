@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="icon" href="/payflowlogo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Show notification in your existing notification bar
+        function showNotification(message, type = "success") {
+            const bar = document.getElementById("notificationBar");
+            bar.innerHTML = `
+                <div class="flex justify-between items-center max-w-xl mx-auto text-white px-6 py-4 rounded-lg shadow-md transition
+                    ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}">
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.remove()" class="ml-4 text-lg font-bold leading-none">×</button>
+                </div>
+            `;
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                if(bar.firstChild) bar.firstChild.remove();
+            }, 5000);
+        }
+
+        window.onload = async () => {
+            const token = localStorage.getItem("token");
+            if (!token) return window.location.href = "/";
+
+            const res = await fetch('/api/auth/me', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            if (res.ok) {
+                const data = await res.json();
+                document.getElementById('userName').textContent = data.fullName || data.username || "User";
+                localStorage.setItem("username", (data.username || "").toLowerCase());
+            } else {
+                showNotification("Session expired. Please login again.", "error");
+                localStorage.clear();
+                window.location.href = "/";
+            }
+        };
+
+        function logOut() {
+    const refreshToken = localStorage.getItem("refreshToken");
+
+    if (!refreshToken) {
+        showNotification("No refresh token found. Please log in again.", "error");
+        return;
+    }
+
+    fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ refreshToken })
+    })
+    .then(response => {
+        if (response.ok) {
+            showNotification("Logged out successfully");
+
+            // Wait the same 5 seconds as the notification
+            setTimeout(() => {
+                localStorage.clear();
+                window.location.replace("index.html");
+            }, 1500); // Match this to showNotification timeout
+        } else {
+            showNotification("Logout failed", "error");
+        }
+    })
+    .catch(error => {
+        showNotification("Logout failed: " + error, "error");
+    });
+}
+
+        function fetchWalletData() {
+            const userToken = localStorage.getItem("token");
+
+            if (!userToken) {
+                showNotification("Please log in to view wallet data.", "error");
+                return;
+            }
+
+            fetch('/api/wallet/balance', {
+                method: 'GET',
+                headers: { 'Authorization': `Bearer ${userToken}` }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.balance !== undefined) {
+                    document.getElementById("walletBalance").innerText = `Balance: ₹${data.balance}`;
+                } else {
+                    showNotification("Error fetching wallet balance", "error");
+                }
+            })
+            .catch(error => {
+                showNotification("Error fetching wallet balance: " + error, "error");
+            });
+        }
+
+        function addFunds() {
+            const userToken = localStorage.getItem("token");
+            const amount = document.getElementById("fundAmount").value;
+
+            if (!userToken) return showNotification("Please log in to add funds.", "error");
+            if (!amount || isNaN(amount) || amount <= 0) return showNotification("Please enter a valid amount.", "error");
+
+            fetch('/api/wallet/add-funds', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${userToken}`
+                },
+                body: JSON.stringify({ amount: parseFloat(amount) })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    fetchWalletData();
+                    showNotification("Funds added successfully");
+                } else {
+                    showNotification("Failed to add funds", "error");
+                }
+            })
+            .catch(error => {
+                showNotification("Error adding funds: " + error, "error");
+            });
+        }
+
+        function sendMoney() {
+    const userToken = localStorage.getItem("token");
+    const amount = document.getElementById("sendAmount").value;
+    const recipient = document.getElementById("recipientUsername").value;
+
+    if (!userToken) return showNotification("Please log in to send money.", "error");
+    if (!amount || isNaN(amount) || amount <= 0) return showNotification("Please enter a valid amount.", "error");
+    if (!recipient) return showNotification("Please enter the recipient's username.", "error");
+
+    fetch('/api/transaction/send-money', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${userToken}`
+        },
+        body: JSON.stringify({ amount: parseFloat(amount), receiverUsername: recipient })
+    })
+    .then(async response => {
+        const text = await response.text();
+         const data = text ? JSON.parse(text) : {};
+
+        if (!response.ok) {
+            // Specific handling for 404
+            if (response.status === 404 && data.message === "Receiver not found") {
+                showNotification("The recipient does not exist. Please check the username.", "error");
+            } else {
+                showNotification(data.message || "Failed to send money.", "error");
+            }
+            throw new Error(data.message || "Error sending money");
+        }
+
+        return data;
+    })
+
+    .then(data => {
+        fetchWalletData();
+        showNotification("Money sent successfully");
+    })
+    .catch(error => {
+        console.error("Error:", error.message);
+        // Notification already shown above
+    });
+}
+
+
+        function fetchTransactionHistory() {
+            const userToken = localStorage.getItem("token");
+
+            if (!userToken) return showNotification("Please log in to view transaction history.", "error");
+
+            fetch('/api/transaction/history', {
+                method: 'GET',
+                headers: { 'Authorization': `Bearer ${userToken}` }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const historyDiv = document.getElementById('transactionHistory');
+                historyDiv.innerHTML = "";
+
+                if (data.length === 0) {
+                    historyDiv.innerHTML = "<p class='text-gray-600'>No transactions found.</p>";
+                } else {
+                    const currentUsername = (localStorage.getItem("username") || "").trim().toLowerCase();
+
+                    data.forEach(txn => {
+                        const senderUsername = (txn.sender?.username || "").trim().toLowerCase();
+                        const receiverUsername = (txn.receiver?.username || "").trim().toLowerCase();
+                        const isSent = senderUsername === currentUsername;
+                        const amountColor = isSent ? 'text-red-600' : 'text-green-600';
+
+                        const txnItem = document.createElement('div');
+                        txnItem.className = "p-3 border rounded-lg shadow bg-gray-100 hover:bg-blue-50 hover:shadow-md transition";
+
+                        txnItem.innerHTML = `
+                            <div class="flex justify-between text-sm font-medium">
+                                <span>Sender: ${txn.sender.username}</span>
+                                <span>Receiver: ${txn.receiver.username}</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600 mt-1">
+                                <span class="${amountColor} font-semibold">Amount: ₹${txn.amount}</span>
+                                <span>Date: ${new Date(txn.transactionDate).toLocaleString()}</span>
+                            </div>
+                        `;
+                        historyDiv.appendChild(txnItem);
+                    });
+                }
+            })
+            .catch(error => {
+                showNotification("Error fetching transaction history: " + error, "error");
+            });
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-br from-green-100 via-teal-100 to-blue-100 min-h-screen flex items-center justify-center font-sans">
+<!-- Notification Bar -->
+<div id="notificationBar" class="fixed top-4 left-0 right-0 z-50 flex justify-center"></div>
+
+<div class="container mx-auto max-w-4xl space-y-10 mt-10">
+    <!-- Welcome Card -->
+    <div class="bg-white/70 backdrop-blur-md shadow-2xl rounded-2xl p-6 flex items-center space-x-4 w-full mx-auto min-h-[140px]">
+        <img src="/payflow.png" alt="PayFlow Logo" class="h-20 w-auto flex-shrink-0 self-center" />
+        <div class="text-center flex-1">
+            <h1 class="text-4xl font-bold text-teal-700">
+                Welcome to PayFlow, <span id="userName"></span>!
+            </h1>
+            <p class="text-gray-600 mt-2">Manage your wallet & transactions smoothly.</p>
+        </div>
+    </div>
+
+    <!-- Wallet Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-violet-100 rounded-2xl shadow-lg p-6 space-y-4 text-center">
+            <h2 class="text-2xl font-semibold text-violet-800">Your Wallet</h2>
+            <p id="walletBalance" class="text-3xl font-bold text-gray-800">₹0.00</p>
+            <button onclick="fetchWalletData()" class="bg-violet-600 hover:bg-violet-700 text-white py-2 px-6 rounded-full shadow transition">
+                Refresh Wallet
+            </button>
+        </div>
+        <div class="bg-green-100 rounded-2xl shadow-lg p-6 space-y-4 text-center">
+            <h2 class="text-2xl font-semibold text-green-800">Add Funds</h2>
+            <input type="number" id="fundAmount" placeholder="Amount" class="border rounded-full p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-400" />
+            <button onclick="addFunds()" class="bg-green-600 hover:bg-green-700 text-white py-2 px-6 rounded-full shadow transition">
+                Add Funds
+            </button>
+        </div>
+    </div>
+
+    <!-- Send Money -->
+    <div class="bg-blue-100 rounded-2xl shadow-lg p-6 space-y-4 text-center">
+        <h2 class="text-2xl font-semibold text-blue-800">Send Money</h2>
+        <input type="text" id="recipientUsername" placeholder="Recipient Username" class="border rounded-full p-3 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="number" id="sendAmount" placeholder="Amount" class="border rounded-full p-3 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <button onclick="sendMoney()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full shadow transition">
+            Send
+        </button>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-semibold text-pink-700">Transaction History</h2>
+            <button onclick="fetchTransactionHistory()" class="bg-pink-600 hover:bg-pink-700 text-white py-2 px-6 rounded-full shadow transition">
+                View History
+            </button>
+        </div>
+        <div id="transactionHistory" class="space-y-3 max-h-96 overflow-y-auto"></div>
+            <!-- Transactions will appear here -->
+        </div>
+
+    <!-- Logout -->
+    <div class="text-center mt-10">
+        <button onclick="logOut()" class="bg-red-600 hover:bg-red-700 text-white py-3 px-8 rounded-full shadow-lg transition text-lg font-semibold">
+            Log Out
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

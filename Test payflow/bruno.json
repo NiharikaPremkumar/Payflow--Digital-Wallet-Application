@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Test payflow",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

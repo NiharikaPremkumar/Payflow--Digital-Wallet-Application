@@ -1,0 +1,552 @@
+2025-05-19 22:31:10 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2412 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 22:31:10 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 22:31:10 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 22:31:10 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-05-19 22:31:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 22:31:10 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:31:10 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 22:31:10 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 22:31:10 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 22:31:10 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 434 ms
+2025-05-19 22:31:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 22:31:10 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@340afaf8
+2025-05-19 22:31:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 22:31:10 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 22:31:10 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 22:31:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 22:31:11 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 22:31:11 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 22:31:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:31:11 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 22:31:11 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 22:31:11 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34f3c920, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73f0b216, org.springframework.security.web.context.SecurityContextHolderFilter@650997b0, org.springframework.security.web.header.HeaderWriterFilter@551976c2, org.springframework.web.filter.CorsFilter@73bd146c, org.springframework.security.web.authentication.logout.LogoutFilter@5f662dd, com.payflow.security.JwtAuthFilter@5cd6a827, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77e24d3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66831b14, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ea78c72, org.springframework.security.web.session.SessionManagementFilter@39f5eba4, org.springframework.security.web.access.ExceptionTranslationFilter@7dd92a36, org.springframework.security.web.access.intercept.AuthorizationFilter@22cca101]
+2025-05-19 22:31:11 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:31:11 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 22:31:11 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.738 seconds (process running for 1.87)
+2025-05-19 22:31:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 22:31:15 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 22:31:15 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 22:31:15 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:31:15 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:31:35 INFO  c.payflow.controller.AdminController - Admin login attempt: username=john_doe
+2025-05-19 22:31:35 INFO  c.payflow.controller.AdminController - Admin login successful: username=john_doe
+2025-05-19 22:32:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:32:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 22:32:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 22:33:37 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2420 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 22:33:37 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 22:33:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 22:33:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
+2025-05-19 22:33:37 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 22:33:37 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:33:37 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 22:33:37 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 22:33:37 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 22:33:37 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 467 ms
+2025-05-19 22:33:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 22:33:37 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@255d9277
+2025-05-19 22:33:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 22:33:37 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 22:33:37 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 22:33:37 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 22:33:37 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 22:33:38 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 22:33:38 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:33:38 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 22:33:38 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 22:33:38 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@374013e8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@712dd0b0, org.springframework.security.web.context.SecurityContextHolderFilter@3d84f113, org.springframework.security.web.header.HeaderWriterFilter@bb3487c, org.springframework.web.filter.CorsFilter@6b3284, org.springframework.security.web.authentication.logout.LogoutFilter@22cca101, com.payflow.security.JwtAuthFilter@22bca04e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6779959d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@335a45a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@500beb9f, org.springframework.security.web.session.SessionManagementFilter@4265cbed, org.springframework.security.web.access.ExceptionTranslationFilter@39f5eba4, org.springframework.security.web.access.intercept.AuthorizationFilter@2a5d9ede]
+2025-05-19 22:33:38 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:33:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 22:33:38 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.794 seconds (process running for 1.932)
+2025-05-19 22:33:40 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 22:33:40 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 22:33:40 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-05-19 22:33:40 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/admin/audit-transactions' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:33:40 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/admin/audit-transactions' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:33:40 INFO  c.payflow.controller.AdminController - Transaction audit requested
+2025-05-19 22:33:40 INFO  c.payflow.controller.AdminController - Transaction audit data fetched: count=9
+2025-05-19 22:33:42 INFO  c.payflow.controller.AdminController - Transaction audit requested
+2025-05-19 22:33:42 INFO  c.payflow.controller.AdminController - Transaction audit data fetched: count=9
+2025-05-19 22:33:44 INFO  c.payflow.controller.AdminController - Transaction audit requested
+2025-05-19 22:33:44 INFO  c.payflow.controller.AdminController - Transaction audit data fetched: count=9
+2025-05-19 22:33:50 INFO  c.payflow.controller.AdminController - Admin login attempt: username=john_doe
+2025-05-19 22:33:50 INFO  c.payflow.controller.AdminController - Admin login successful: username=john_doe
+2025-05-19 22:33:57 INFO  c.payflow.controller.AdminController - Freeze account request: username=j_doe
+2025-05-19 22:33:57 INFO  c.payflow.controller.AdminController - Account frozen successfully: username=j_doe
+2025-05-19 22:34:01 INFO  c.payflow.controller.AuthController - User info requested for username: john_doe
+2025-05-19 22:34:07 INFO  c.payflow.controller.AuthController - Login attempt for username: j_doe
+2025-05-19 22:34:07 INFO  c.payflow.controller.AuthController - Login successful for username: j_doe
+2025-05-19 22:34:10 INFO  c.payflow.controller.AuthController - User info requested for username: j_doe
+2025-05-19 22:34:14 INFO  c.payflow.controller.AdminController - Unfreeze account request: username=j_doe
+2025-05-19 22:34:14 INFO  c.payflow.controller.AdminController - Account unfrozen successfully: username=j_doe
+2025-05-19 22:34:18 INFO  c.payflow.controller.AdminController - Freeze account request: username=j_doe
+2025-05-19 22:34:18 INFO  c.payflow.controller.AdminController - Account frozen successfully: username=j_doe
+2025-05-19 22:34:37 INFO  c.payflow.controller.AdminController - Unfreeze account request: username=j_doe
+2025-05-19 22:34:37 INFO  c.payflow.controller.AdminController - Account unfrozen successfully: username=j_doe
+2025-05-19 22:34:44 INFO  c.payflow.controller.AdminController - Transaction audit requested
+2025-05-19 22:34:44 INFO  c.payflow.controller.AdminController - Transaction audit data fetched: count=9
+2025-05-19 22:35:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:35:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 22:35:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 22:35:42 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2426 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 22:35:42 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 22:35:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 22:35:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 22:35:43 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 22:35:43 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:35:43 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 22:35:43 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 22:35:43 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 22:35:43 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 467 ms
+2025-05-19 22:35:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 22:35:43 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d8f87a
+2025-05-19 22:35:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 22:35:43 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 22:35:43 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 22:35:43 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 22:35:43 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 22:35:43 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 22:35:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:35:44 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 22:35:44 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 22:35:44 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7bc239db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@709c6768, org.springframework.security.web.context.SecurityContextHolderFilter@18ed8b75, org.springframework.security.web.header.HeaderWriterFilter@386d41cb, org.springframework.web.filter.CorsFilter@3e356ed6, org.springframework.security.web.authentication.logout.LogoutFilter@7bbe5548, com.payflow.security.JwtAuthFilter@3a574a3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13f255ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36a7586f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@403b7be3, org.springframework.security.web.session.SessionManagementFilter@4f1ea463, org.springframework.security.web.access.ExceptionTranslationFilter@65013d71, org.springframework.security.web.access.intercept.AuthorizationFilter@3437fc4f]
+2025-05-19 22:35:44 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:35:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 22:35:44 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.829 seconds (process running for 1.968)
+2025-05-19 22:35:47 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 22:35:47 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 22:35:47 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 22:35:47 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:35:47 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:35:58 INFO  c.payflow.controller.AdminController - Admin login attempt: username=john_doe
+2025-05-19 22:35:58 INFO  c.payflow.controller.AdminController - Admin login successful: username=john_doe
+2025-05-19 22:36:03 INFO  c.payflow.controller.AdminController - Transaction audit requested
+2025-05-19 22:36:03 INFO  c.payflow.controller.AdminController - Transaction audit data fetched: count=9
+2025-05-19 22:36:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:36:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 22:36:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 22:37:50 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2433 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 22:37:50 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 22:37:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 22:37:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 22:37:51 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 22:37:51 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:37:51 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 22:37:51 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 22:37:51 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 22:37:51 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 440 ms
+2025-05-19 22:37:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 22:37:51 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d8f87a
+2025-05-19 22:37:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 22:37:51 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 22:37:51 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 22:37:51 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 22:37:51 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 22:37:51 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 22:37:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:37:52 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 22:37:52 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 22:37:52 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7bc239db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@709c6768, org.springframework.security.web.context.SecurityContextHolderFilter@18ed8b75, org.springframework.security.web.header.HeaderWriterFilter@386d41cb, org.springframework.web.filter.CorsFilter@3e356ed6, org.springframework.security.web.authentication.logout.LogoutFilter@7bbe5548, com.payflow.security.JwtAuthFilter@3a574a3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13f255ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36a7586f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@403b7be3, org.springframework.security.web.session.SessionManagementFilter@4f1ea463, org.springframework.security.web.access.ExceptionTranslationFilter@65013d71, org.springframework.security.web.access.intercept.AuthorizationFilter@3437fc4f]
+2025-05-19 22:37:52 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 22:37:52 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 22:37:52 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.761 seconds (process running for 1.889)
+2025-05-19 22:37:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 22:37:55 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 22:37:55 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 22:37:55 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:37:55 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 22:55:48 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m26s958ms).
+2025-05-19 22:56:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 22:56:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 22:56:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:28:52 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2530 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:28:52 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:28:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:28:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:28:52 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:28:52 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:28:52 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:28:52 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:28:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:28:52 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 432 ms
+2025-05-19 23:28:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:28:52 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@340afaf8
+2025-05-19 23:28:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:28:52 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:28:52 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:28:52 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:28:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:28:53 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:28:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:28:53 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:28:53 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:28:53 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c3f81ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@374013e8, org.springframework.security.web.context.SecurityContextHolderFilter@31ecb361, org.springframework.security.web.header.HeaderWriterFilter@3c070ade, org.springframework.web.filter.CorsFilter@712dd0b0, org.springframework.security.web.authentication.logout.LogoutFilter@765e5a55, com.payflow.security.JwtAuthFilter@11ec2b2f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51d26fed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6779959d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b3284, org.springframework.security.web.session.SessionManagementFilter@36a7586f, org.springframework.security.web.access.ExceptionTranslationFilter@62818ab0, org.springframework.security.web.access.intercept.AuthorizationFilter@403b7be3]
+2025-05-19 23:28:53 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:28:53 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:28:53 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.76 seconds (process running for 1.896)
+2025-05-19 23:28:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:28:56 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:28:56 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:28:56 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:28:56 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:29:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:29:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:29:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:30:33 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2536 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:30:33 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:30:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:30:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:30:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:30:34 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:30:34 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:30:34 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:30:34 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:30:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 467 ms
+2025-05-19 23:30:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:30:34 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61b60600
+2025-05-19 23:30:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:30:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:30:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:30:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:30:34 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:30:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:30:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:30:35 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:30:35 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:30:35 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b3284, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@500beb9f, org.springframework.security.web.context.SecurityContextHolderFilter@6779959d, org.springframework.security.web.header.HeaderWriterFilter@7337f87e, org.springframework.web.filter.CorsFilter@67e37d25, org.springframework.security.web.authentication.logout.LogoutFilter@307ba188, com.payflow.security.JwtAuthFilter@4144d4a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@294c36b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b23897a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78d49939, org.springframework.security.web.session.SessionManagementFilter@31ecb361, org.springframework.security.web.access.ExceptionTranslationFilter@bb3487c, org.springframework.security.web.access.intercept.AuthorizationFilter@2c3f81ef]
+2025-05-19 23:30:35 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:30:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:30:35 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.812 seconds (process running for 1.942)
+2025-05-19 23:30:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:30:44 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:30:44 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:30:44 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:30:44 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:32:19 INFO  c.payflow.controller.AdminController - Admin login attempt: username=john_doe
+2025-05-19 23:32:19 INFO  c.payflow.controller.AdminController - Admin login successful: username=john_doe
+2025-05-19 23:34:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:34:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:34:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:34:13 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2551 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:34:13 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:34:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:34:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:34:14 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:34:14 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:34:14 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:34:14 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:34:14 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:34:14 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 474 ms
+2025-05-19 23:34:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:34:14 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@255d9277
+2025-05-19 23:34:14 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:34:14 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:34:14 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:34:14 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:34:14 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:34:15 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:34:15 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:34:15 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:34:15 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:34:15 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f403d0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186fc6e, org.springframework.security.web.context.SecurityContextHolderFilter@4512f5f1, org.springframework.security.web.header.HeaderWriterFilter@31ecb361, org.springframework.web.filter.CorsFilter@1bd5b1c8, org.springframework.security.web.authentication.logout.LogoutFilter@2a5d9ede, com.payflow.security.JwtAuthFilter@79080255, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bfead8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5799b8a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@569026df, org.springframework.security.web.session.SessionManagementFilter@4cf46574, org.springframework.security.web.access.ExceptionTranslationFilter@4265cbed, org.springframework.security.web.access.intercept.AuthorizationFilter@430dbcb0]
+2025-05-19 23:34:15 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:34:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:34:15 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.885 seconds (process running for 2.019)
+2025-05-19 23:34:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:34:17 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:34:17 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:34:17 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:34:17 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:41:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:41:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:41:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:42:02 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2572 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:42:02 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:42:02 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:42:02 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:42:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:42:02 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:42:02 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:42:02 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:42:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:42:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 471 ms
+2025-05-19 23:42:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:42:02 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d8f87a
+2025-05-19 23:42:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:42:02 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:42:02 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:42:02 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:42:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:42:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:42:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:42:03 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:42:03 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:42:03 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@78d49939, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21f27bb5, org.springframework.security.web.context.SecurityContextHolderFilter@6b23897a, org.springframework.security.web.header.HeaderWriterFilter@4f1ea463, org.springframework.web.filter.CorsFilter@2e2a2b07, org.springframework.security.web.authentication.logout.LogoutFilter@73bd146c, com.payflow.security.JwtAuthFilter@7c31e01f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21cb5648, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69fa5536, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52dc71b2, org.springframework.security.web.session.SessionManagementFilter@6779959d, org.springframework.security.web.access.ExceptionTranslationFilter@77e24d3c, org.springframework.security.web.access.intercept.AuthorizationFilter@6b3284]
+2025-05-19 23:42:03 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:42:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:42:03 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.822 seconds (process running for 1.956)
+2025-05-19 23:42:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:42:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:42:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:42:05 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:42:05 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:46:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:46:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:46:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:46:53 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2584 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:46:53 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:46:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:46:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:46:53 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:46:53 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:46:53 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:46:53 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:46:53 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:46:53 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 453 ms
+2025-05-19 23:46:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:46:53 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1de13f34
+2025-05-19 23:46:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:46:53 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:46:53 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:46:53 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:46:53 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:46:54 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:46:54 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:46:54 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:46:54 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:46:54 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f403d0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186fc6e, org.springframework.security.web.context.SecurityContextHolderFilter@4512f5f1, org.springframework.security.web.header.HeaderWriterFilter@31ecb361, org.springframework.web.filter.CorsFilter@1bd5b1c8, org.springframework.security.web.authentication.logout.LogoutFilter@2a5d9ede, com.payflow.security.JwtAuthFilter@7945986a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bfead8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5799b8a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@569026df, org.springframework.security.web.session.SessionManagementFilter@4cf46574, org.springframework.security.web.access.ExceptionTranslationFilter@4265cbed, org.springframework.security.web.access.intercept.AuthorizationFilter@430dbcb0]
+2025-05-19 23:46:54 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:46:54 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:46:54 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.764 seconds (process running for 1.899)
+2025-05-19 23:46:59 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:46:59 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:46:59 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-05-19 23:46:59 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:46:59 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:47:00 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-05-19 23:48:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:48:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:48:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:48:51 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2588 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:48:51 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:48:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:48:52 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:48:52 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:48:52 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:48:52 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:48:52 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:48:52 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:48:52 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 441 ms
+2025-05-19 23:48:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:48:52 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@336f49a1
+2025-05-19 23:48:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:48:52 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:48:52 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:48:52 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:48:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:48:52 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:48:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:48:53 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:48:53 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:48:53 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c3f81ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@374013e8, org.springframework.security.web.context.SecurityContextHolderFilter@31ecb361, org.springframework.security.web.header.HeaderWriterFilter@3c070ade, org.springframework.web.filter.CorsFilter@712dd0b0, org.springframework.security.web.authentication.logout.LogoutFilter@765e5a55, com.payflow.security.JwtAuthFilter@37b44e8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51d26fed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6779959d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b3284, org.springframework.security.web.session.SessionManagementFilter@36a7586f, org.springframework.security.web.access.ExceptionTranslationFilter@62818ab0, org.springframework.security.web.access.intercept.AuthorizationFilter@403b7be3]
+2025-05-19 23:48:53 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:48:53 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:48:53 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.746 seconds (process running for 1.871)
+2025-05-19 23:48:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:48:56 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:48:56 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-05-19 23:48:56 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:48:56 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:49:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:49:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:49:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:50:01 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2593 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:50:01 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:50:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:50:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:50:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:50:01 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:50:01 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:50:01 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:50:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:50:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 438 ms
+2025-05-19 23:50:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:50:01 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@255d9277
+2025-05-19 23:50:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:50:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:50:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:50:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:50:01 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:50:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:50:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:50:02 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:50:02 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:50:02 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f403d0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186fc6e, org.springframework.security.web.context.SecurityContextHolderFilter@4512f5f1, org.springframework.security.web.header.HeaderWriterFilter@31ecb361, org.springframework.web.filter.CorsFilter@1bd5b1c8, org.springframework.security.web.authentication.logout.LogoutFilter@2a5d9ede, com.payflow.security.JwtAuthFilter@79080255, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bfead8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5799b8a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@569026df, org.springframework.security.web.session.SessionManagementFilter@4cf46574, org.springframework.security.web.access.ExceptionTranslationFilter@4265cbed, org.springframework.security.web.access.intercept.AuthorizationFilter@430dbcb0]
+2025-05-19 23:50:02 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:50:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:50:02 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.745 seconds (process running for 1.872)
+2025-05-19 23:50:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:50:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:50:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:50:05 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:50:05 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:52:04 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:52:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:52:09 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2603 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:52:09 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:52:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:52:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:52:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:52:09 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:52:09 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:52:09 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:52:09 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:52:09 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 494 ms
+2025-05-19 23:52:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:52:09 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5cf0673d
+2025-05-19 23:52:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:52:09 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:52:09 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:52:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:52:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:52:10 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:52:10 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:52:10 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:52:10 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:52:10 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@289d9f0d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39aaa7db, org.springframework.security.web.context.SecurityContextHolderFilter@42718ebf, org.springframework.security.web.header.HeaderWriterFilter@504a9352, org.springframework.web.filter.CorsFilter@14a3a66c, org.springframework.security.web.authentication.logout.LogoutFilter@5f113867, com.payflow.security.JwtAuthFilter@60e5b3a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c7008b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f54fabc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1738d3b2, org.springframework.security.web.session.SessionManagementFilter@5cc28282, org.springframework.security.web.access.ExceptionTranslationFilter@264340f0, org.springframework.security.web.access.intercept.AuthorizationFilter@72fc6b5e]
+2025-05-19 23:52:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:52:10 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.965 seconds (process running for 2.395)
+2025-05-19 23:52:10 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:52:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:52:10 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:52:12 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2607 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:52:12 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:52:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:52:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:52:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:52:12 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:52:12 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:52:12 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:52:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:52:13 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 465 ms
+2025-05-19 23:52:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:52:13 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3869a6e5
+2025-05-19 23:52:13 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:52:13 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:52:13 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:52:13 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:52:13 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:52:13 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:52:13 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:52:13 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:52:13 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:52:14 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7896e96a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e451f9a, org.springframework.security.web.context.SecurityContextHolderFilter@5f662dd, org.springframework.security.web.header.HeaderWriterFilter@335a45a8, org.springframework.web.filter.CorsFilter@7828bc6b, org.springframework.security.web.authentication.logout.LogoutFilter@712dd0b0, com.payflow.security.JwtAuthFilter@d863bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@760ac834, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c4c32ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f59cb6f, org.springframework.security.web.session.SessionManagementFilter@2a22e7e2, org.springframework.security.web.access.ExceptionTranslationFilter@51d26fed, org.springframework.security.web.access.intercept.AuthorizationFilter@186fc6e]
+2025-05-19 23:52:14 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:52:14 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:52:14 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.734 seconds (process running for 1.868)
+2025-05-19 23:52:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:52:17 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:52:17 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:52:17 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:52:17 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:56:01 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:56:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:56:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:56:03 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2616 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:56:03 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:56:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:56:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:56:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:56:03 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:56:03 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:56:03 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:56:03 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:56:03 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 461 ms
+2025-05-19 23:56:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:56:04 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d8f87a
+2025-05-19 23:56:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:56:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:56:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:56:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:56:04 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:56:04 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:56:04 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:56:04 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:56:04 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:56:04 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@78d49939, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21f27bb5, org.springframework.security.web.context.SecurityContextHolderFilter@6b23897a, org.springframework.security.web.header.HeaderWriterFilter@4f1ea463, org.springframework.web.filter.CorsFilter@2e2a2b07, org.springframework.security.web.authentication.logout.LogoutFilter@73bd146c, com.payflow.security.JwtAuthFilter@7c31e01f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21cb5648, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69fa5536, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52dc71b2, org.springframework.security.web.session.SessionManagementFilter@6779959d, org.springframework.security.web.access.ExceptionTranslationFilter@77e24d3c, org.springframework.security.web.access.intercept.AuthorizationFilter@6b3284]
+2025-05-19 23:56:05 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:56:05 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:56:05 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.819 seconds (process running for 1.954)
+2025-05-19 23:56:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:56:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:56:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:56:07 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:56:07 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:58:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:58:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:58:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:58:04 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2628 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:58:04 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:58:04 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:58:04 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:58:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:58:04 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:58:04 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:58:04 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:58:04 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:58:04 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 452 ms
+2025-05-19 23:58:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:58:04 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d8f87a
+2025-05-19 23:58:04 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:58:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:58:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:58:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:58:05 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:58:05 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:58:05 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:58:05 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:58:05 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:58:05 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21f27bb5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e2a2b07, org.springframework.security.web.context.SecurityContextHolderFilter@40dd2cfe, org.springframework.security.web.header.HeaderWriterFilter@3a641f6, org.springframework.web.filter.CorsFilter@52dc71b2, org.springframework.security.web.authentication.logout.LogoutFilter@1ea78c72, com.payflow.security.JwtAuthFilter@442151d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69fa5536, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ee5792a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e1d2781, org.springframework.security.web.session.SessionManagementFilter@335a45a8, org.springframework.security.web.access.ExceptionTranslationFilter@66831b14, org.springframework.security.web.access.intercept.AuthorizationFilter@500beb9f]
+2025-05-19 23:58:05 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:58:05 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:58:05 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.871 seconds (process running for 2.004)
+2025-05-19 23:58:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:58:07 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:58:07 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:58:07 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:58:07 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-dashboard.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:58:08 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-05-19 23:59:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:59:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-19 23:59:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-19 23:59:20 INFO  com.payflow.PayFlowApplication - Starting PayFlowApplication using Java 21.0.6 with PID 2633 (/Users/niharika/IdeaProjects/PayFlow/target/classes started by niharika in /Users/niharika/IdeaProjects/PayFlow)
+2025-05-19 23:59:20 INFO  com.payflow.PayFlowApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 23:59:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 23:59:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2025-05-19 23:59:21 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-19 23:59:21 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:59:21 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-19 23:59:21 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-05-19 23:59:21 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-19 23:59:21 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 450 ms
+2025-05-19 23:59:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-19 23:59:21 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1de13f34
+2025-05-19 23:59:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-19 23:59:21 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 23:59:21 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-05-19 23:59:21 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-19 23:59:21 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 23:59:21 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 23:59:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 23:59:22 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 23:59:22 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-19 23:59:22 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7896e96a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e451f9a, org.springframework.security.web.context.SecurityContextHolderFilter@5f662dd, org.springframework.security.web.header.HeaderWriterFilter@335a45a8, org.springframework.web.filter.CorsFilter@7828bc6b, org.springframework.security.web.authentication.logout.LogoutFilter@712dd0b0, com.payflow.security.JwtAuthFilter@aca2a0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@760ac834, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c4c32ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f59cb6f, org.springframework.security.web.session.SessionManagementFilter@2a22e7e2, org.springframework.security.web.access.ExceptionTranslationFilter@51d26fed, org.springframework.security.web.access.intercept.AuthorizationFilter@186fc6e]
+2025-05-19 23:59:22 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-19 23:59:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-05-19 23:59:22 INFO  com.payflow.PayFlowApplication - Started PayFlowApplication in 1.731 seconds (process running for 1.867)
+2025-05-19 23:59:25 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 23:59:25 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 23:59:25 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-19 23:59:25 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-auth.html' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2025-05-19 23:59:25 WARN  o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/admin-auth.html' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.

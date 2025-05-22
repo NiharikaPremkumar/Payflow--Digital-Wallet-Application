@@ -38,22 +38,23 @@ public class AuthController {
     private final WalletRepository walletRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+     @Autowired
     private final RefreshTokenRepository refreshTokenRepository;
+
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignupRequest req) {
         logger.info("Signup attempt for username: {}", req.getUsername());
 
         if (userRepository.existsByUsername(req.getUsername())) {
-            logger.warn("Signup failed: Username {} already taken", req.getUsername());
             return ResponseEntity.badRequest().body(Map.of("error", "Username is already taken"));
         }
 
         if (userRepository.existsByEmail(req.getEmail())) {
-            logger.warn("Signup failed: Email {} already registered", req.getEmail());
             return ResponseEntity.badRequest().body(Map.of("error", "Email is already registered"));
         }
 
+        // Create and save user
         User user = new User();
         user.setUsername(req.getUsername());
         user.setEmail(req.getEmail());
@@ -61,26 +62,31 @@ public class AuthController {
         user.setPasswordHash(passwordEncoder.encode(req.getPassword()));
         user = userRepository.save(user);
 
+        // Create wallet
         Wallet wallet = new Wallet();
         wallet.setUser(user);
         wallet.setBalance(BigDecimal.ZERO);
         wallet.setCurrency("INR");
         walletRepository.save(wallet);
 
-        // 🔑 Generate tokens
+        // Generate access token
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(
                 user.getUsername(), user.getPasswordHash(), new ArrayList<>()
         );
-
         String accessToken = jwtUtil.generateToken(userDetails);
-        String refreshToken = jwtUtil.generateToken(userDetails);
 
-        // You can save refreshToken to DB if needed
+        // Generate and save refresh token
+        String refreshTokenStr = UUID.randomUUID().toString();
+        RefreshToken refreshToken = new RefreshToken();
+        refreshToken.setToken(refreshTokenStr);
+        refreshToken.setUser(user);
+        refreshToken.setExpiryDate(Instant.now().plus(7, ChronoUnit.DAYS));
+        refreshTokenRepository.save(refreshToken);
 
         Map<String, String> response = new HashMap<>();
         response.put("message", "User Registered Successfully");
         response.put("accessToken", accessToken);
-        response.put("refreshToken", refreshToken);
+        response.put("refreshToken", refreshTokenStr);
 
         logger.info("User registered successfully: {}", req.getUsername());
         return ResponseEntity.ok(response);

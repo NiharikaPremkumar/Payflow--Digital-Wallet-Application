@@ -180,7 +180,7 @@
         const item = document.createElement("div");
         item.className = "px-2 py-1 rounded font-mono text-sm text-gray-800 bg-white/40 border border-white/30 mb-1";
         const date = new Date(tx.transactionDate).toLocaleString();
-        item.innerHTML = `<span class="text-teal-700 font-semibold">${tx.senderUsername}</span> → <span class="text-teal-700 font-semibold">${tx.recipientUsername}</span>: ₹${tx.amount.toFixed(2)} <br/><small class="text-gray-600">${date}</small>`;
+        item.innerHTML = `<span class="text-teal-700 font-semibold">${tx.senderUsername}</span> → <span class="text-teal-700 font-semibold">${tx.receiverUsername}</span>: ₹${tx.amount.toFixed(2)} <br/><small class="text-gray-600">${date}</small>`;
         container.appendChild(item);
       });
     })

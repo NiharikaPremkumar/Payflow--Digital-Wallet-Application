@@ -128,21 +128,23 @@
   const data = await res.json();
 
   if (res.ok && data.message) {
-    signupSuccess.textContent = data.message;
-    signupSuccess.classList.remove('hidden');
-    signupMessage.classList.add('hidden');
-    loginMessage.classList.add('hidden');
-    if (data.accessToken) {
-      localStorage.setItem("token", data.accessToken);
-    }
-    setTimeout(() => window.location.href = "/dashboard.html", 1500);
-  } else {
+  signupSuccess.textContent = data.message;
+  signupSuccess.classList.remove('hidden');
+  signupMessage.classList.add('hidden');
+  loginMessage.classList.add('hidden');
+  if (data.accessToken) {
+    localStorage.setItem("token", data.accessToken);
+  }
+  if (data.refreshToken) {
+    localStorage.setItem("refreshToken", data.refreshToken);
+  }
+  setTimeout(() => window.location.href = "/dashboard.html", 1500);
+}else {
     signupMessage.textContent = data.error || "Signup failed";
     signupMessage.classList.remove('hidden');
     signupSuccess.classList.add('hidden');
   }
 };
-
 </script>
 </body>
 </html>
